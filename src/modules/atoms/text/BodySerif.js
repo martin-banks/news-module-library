@@ -9,7 +9,7 @@ export default class BodySerif extends React.Component{
 
 	render(){
 		return (
-			<p className={concatClassNames(['serif'])}>
+			<p className={concatClassNames(['bodySerif'])}>
 				{this.props.text}
 			</p>
 		)
