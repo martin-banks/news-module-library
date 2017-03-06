@@ -1,7 +1,16 @@
 {
-  "name": "react-test",
+  "name": "react-component-library",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-banks/react-module-sandbox.git"
+  },
+  "author": "Martin Banks",
+  "bugs": {
+      "url": "https://github.com/martin-banks/react-module-sandbox/issues"
+    },
+  "homepage": "https://github.com/martin-banks/react-module-sandbox#readme",
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
