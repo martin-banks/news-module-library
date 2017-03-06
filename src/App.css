@@ -1,0 +1,22 @@
+.App {
+  padding: 0 32px;
+}
+
+.elementContainer {
+	border-bottom:  solid 1px #ccc;
+	padding:  32px 0;
+
+}
+
+.elementName {
+	display: table;
+	font-family: 'Helvetica', sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: #000;
+	color: #fff;
+	padding: 4px 8px;
+	margin: 0;
+	border-radius: 4px;
+}
