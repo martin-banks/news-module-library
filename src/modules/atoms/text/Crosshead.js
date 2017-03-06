@@ -9,9 +9,9 @@ export default class Crosshead extends React.Component{
 
 	render(){
 		return (
-			<h3 className={concatClassNames(['crosshead'])}>
+			<h2 className={concatClassNames(['crosshead'])}>
 				{this.props.text}
-			</h3>
+			</h2>
 		)
 	}
 

@@ -2,8 +2,6 @@
 
 ## Definitions
 
----
-
 ### Title
 Main display headline / title.
 Tyipcally used for: Primary entry point to an article

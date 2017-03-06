@@ -9,9 +9,9 @@ export default class Intro extends React.Component{
 
 	render(){
 		return (
-			<h2 className={concatClassNames(['intro'])}>
+			<h4 className={concatClassNames(['intro'])}>
 				{this.props.text}
-			</h2>
+			</h4>
 		)
 	}
 

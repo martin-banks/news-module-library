@@ -9,9 +9,9 @@ export default class Smallhead extends React.Component{
 
 	render(){
 		return (
-			<h4 className={concatClassNames(['smallHead'])}>
+			<h3 className={concatClassNames(['smallHead'])}>
 				{this.props.text}
-			</h4>
+			</h3>
 		)
 	}
 
