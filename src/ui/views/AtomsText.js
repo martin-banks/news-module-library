@@ -29,37 +29,51 @@ export default class AtomsText extends React.Component{
 			<section>
 				<div className="elementContainer">
 					<h4 className="elementName">Kicker</h4>
-					<Kicker text={sampleText.kicker}/>
+					<div className="previewWrapper">
+						<Kicker text={sampleText.kicker}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Title</h4>
-					<Title text={sampleText.title}/>
+					<div className="previewWrapper">
+						<Title text={sampleText.title}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Introduction</h4>
-					<Intro text={sampleText.intro}/>
+					<div className="previewWrapper">
+						<Intro text={sampleText.intro}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Crosshead</h4>
-					<Crosshead text={sampleText.crosshead}/>
+					<div className="previewWrapper">
+						<Crosshead text={sampleText.crosshead}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Smallhead</h4>
-					<Smallhead text={sampleText.crosshead}/>
+					<div className="previewWrapper">
+						<Smallhead text={sampleText.crosshead}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Body - serif</h4>
-					<BodySerif text={sampleText.paragraph}/>
+					<div className="previewWrapper">
+						<BodySerif text={sampleText.paragraph}/>
+					</div>
 				</div>
 
 				<div className="elementContainer">
 					<h4 className="elementName">Body - sans-serif</h4>
-					<BodySans text={sampleText.paragraph}/>
+					<div className="previewWrapper">
+						<BodySans text={sampleText.paragraph}/>
+					</div>
 				</div>
 
 			</section>
