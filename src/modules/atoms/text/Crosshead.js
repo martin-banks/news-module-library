@@ -3,10 +3,7 @@ import {concatClassNames} from '../../../functions/concatClassNames'
 
 
 export default class Crosshead extends React.Component{
-	constructor(props){
-		super(props)
-	}
-
+	
 	render(){
 		return (
 			<h2 className={concatClassNames(['crosshead'])}>

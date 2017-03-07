@@ -4,10 +4,7 @@ import styles from '../../../styles/text.css'
 
 
 export default class Title extends React.Component{
-	constructor(props){
-		super(props)
-	}
-
+	
 	render(){
 		return (
 			<h1 className={concatClassNames(['title'])} >

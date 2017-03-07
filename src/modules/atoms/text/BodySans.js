@@ -3,10 +3,7 @@ import {concatClassNames} from '../../../functions/concatClassNames'
 
 
 export default class BodySerif extends React.Component{
-	constructor(props){
-		super(props)
-	}
-
+	
 	render(){
 		return (
 			<p className={concatClassNames(['bodySansSerif'])}>

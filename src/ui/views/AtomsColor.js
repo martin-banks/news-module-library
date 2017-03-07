@@ -23,12 +23,12 @@ export default class AtomsColor extends React.Component {
 			return (
 				<div 
 					key={'swatchGroup' + colorName} 
-					className="colorTintGroup"
+					className="elementContainer"
 				>
 					<h4 className="elementName">
 						{colorName}
 					</h4>
-					<ul>{swatches}</ul>
+					<ul className='previewWrapper'>{swatches}</ul>
 				</div>
 			)
 
@@ -37,7 +37,7 @@ export default class AtomsColor extends React.Component {
 
 	render(){
 		return (
-			<div id='colorSwatchContainer'>
+			<div id='atomColorView'>
 				{this.createSwatches()}
 			</div>
 		)

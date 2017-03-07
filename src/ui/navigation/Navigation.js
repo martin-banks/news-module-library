@@ -1,15 +1,9 @@
 import React from 'react'
 import NavItem from './NavItem'
 import atomLogo from '../icons/icons_atom.svg'
-const navOptions = {
-	atoms: [
-		'Text',
-		'Icon',
-		'Logo',
-		'Color',
-		'Font'
-	]
-}
+import moleculeLogo from '../icons/icons_molecule.svg'
+import {navOptions} from './_navOptions'
+
 
 export default class Navigation extends React.Component {
 	constructor(props){
@@ -27,7 +21,9 @@ export default class Navigation extends React.Component {
 	createItems(){
 		return Object.keys(navOptions).map(group => {
 			return <div key={group}>
-				<li className="navGroupHeader">{group}<img src={atomLogo} /></li>
+				<li className="navGroupHeader">
+					{group}<i className="material-icons">{this.props.navIcons[group]}</i>
+				</li>
 				<ul>
 				{navOptions[group].map( (nav,i) => {
 					return <NavItem 

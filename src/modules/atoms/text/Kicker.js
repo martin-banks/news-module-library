@@ -3,10 +3,7 @@ import {concatClassNames} from '../../../functions/concatClassNames'
 
 
 export default class Kicker extends React.Component{
-	constructor(props){
-		super(props)
-	}
-
+	
 	render(){
 		return (
 			<h6 className={concatClassNames(['kicker'])}>

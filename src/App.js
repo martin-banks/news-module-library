@@ -4,7 +4,14 @@ import Title from './modules/atoms/text/Title'
 import Navigation from './ui/navigation/Navigation'
 import {viewController} from './ui/_viewController'
 import AtomsText from './ui/views/AtomsText'
+import {navOptions} from './ui/navigation/_navOptions'
 
+const initialNavIcon = ()=> {
+	return Object.keys(navOptions).reduce( (set, option) => {
+		set[option] = 'expand_more'
+		return set
+	}, {})
+}
 
 class App extends Component {
 	constructor(props){
@@ -20,9 +27,14 @@ class App extends Component {
 			activeNav: {
 				section: null,
 				page: null
-			},
+			}			
 		}
 	}
+
+	componentWillMount() {
+		this.setState({navIcons: initialNavIcon()})
+	}
+
 	changeView(e){
 		let activeView = {
 			group: e.target.getAttribute('data-group').toLowerCase(),
@@ -59,6 +71,7 @@ class App extends Component {
         <Navigation
         	changeView={this.changeView}
 					activeNav={this.state.activeNav}
+					navIcons={this.state.navIcons}
         />
         <div id="viewContainer">
 	        {this.setView()}

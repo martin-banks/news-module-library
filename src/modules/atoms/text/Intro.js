@@ -3,10 +3,7 @@ import {concatClassNames} from '../../../functions/concatClassNames'
 
 
 export default class Intro extends React.Component{
-	constructor(props){
-		super(props)
-	}
-
+	
 	render(){
 		return (
 			<h4 className={concatClassNames(['intro'])}>

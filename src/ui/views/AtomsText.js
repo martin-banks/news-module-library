@@ -11,24 +11,14 @@ import Smallhead from '../../modules/atoms/text/Smallhead'
 
 
 
-let allModules = [
-	Title,
-	Intro,
-	Kicker
-]
-
-
 export default class AtomsText extends React.Component{
-	constructor(props){
-		super(props)
-		
-	}
-
-
+	/*constructor(props){
+		super(props)	
+	}*/
 
 	render(){
 		return (
-			<section>
+			<section id="atomTextView">
 				<div className="elementContainer">
 					<h4 className="elementName">Kicker</h4>
 					<div className="previewWrapper">
