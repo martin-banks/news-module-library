@@ -15,6 +15,13 @@ export default class Navigation extends React.Component {
 	constructor(props){
 		super(props)
 		this.createItems = this.createItems.bind(this)
+		this.checkActiveNav = this.checkActiveNav.bind(this)
+	}
+
+	checkActiveNav(viewToCheck){
+		if(!!this.props.activeNav.page){
+			return this.props.activeNav.page.toLowerCase() === viewToCheck.toLowerCase()
+		}
 	}
 
 	createItems(){
@@ -28,6 +35,7 @@ export default class Navigation extends React.Component {
 						group={group} 
 						view={nav} 
 						handleClick={this.props.changeView}
+						isActive={this.checkActiveNav(nav)}
 					/>
 				})}
 				</ul>
