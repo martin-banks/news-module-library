@@ -11,11 +11,16 @@ class App extends Component {
 		super(props)
 		this.changeView = this.changeView.bind(this)
 		this.setView = this.setView.bind(this)
+
 		this.state = {
 			activeView: {
 				group: null,
 				view: null
-			}
+			},
+			activeNav: {
+				section: null,
+				page: null
+			},
 		}
 	}
 	changeView(e){
@@ -23,7 +28,13 @@ class App extends Component {
 			group: e.target.getAttribute('data-group').toLowerCase(),
 			view: e.target.getAttribute('data-view').toLowerCase()
 		}
+		let activeNav = {
+			activeNavsection: e.target.getAttribute('data-group').toLowerCase(),
+			page: e.target.getAttribute('data-view').toLowerCase()
+		}
 		this.setState({activeView: activeView})
+		this.setState({activeNav:activeNav})
+		//e.target.setAttribute('data-active', 'true')
 	}
 
 	setView(){
@@ -40,11 +51,14 @@ class App extends Component {
 		}		
 	}
 
+
+
   render() {
     return (
       <div className="App">
         <Navigation
         	changeView={this.changeView}
+					activeNav={this.state.activeNav}
         />
         <div id="viewContainer">
 	        {this.setView()}

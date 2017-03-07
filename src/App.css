@@ -55,10 +55,9 @@ body {
 	height: 24px;
 }
 
-#navigationContainer li[data-active] {
+#navigationContainer li[data-active='true'] {
 	color: rgba(255,255,255, 0.8);
 	background-color: rgba(0,0,0,0.2);
-	border-bottom: solid 1px rgba(0,0,0,0.4);
 }
 
 #navigationContainer li:hover {
@@ -93,4 +92,31 @@ body {
 	border: solid 1px #ccc;
 	margin-top:  8px;
 	border-radius: 4px;
+}
+
+
+#colorSwatchContainer {
+	display: inline-block;
+	margin: 32px;
+	text-align: left;
+}
+
+#colorSwatchContainer div {
+	display: inline-block;
+}
+
+.colorTintGroup {
+	width: 100%
+}
+.colorTintGroup ul {
+	background: #fff;
+	border: solid 1px #ccc;
+	border-radius: 4px;
+	margin-bottom: 40px;
+}
+
+#colorSwatchContainer li {
+	display: inline-block;
+	margin: 16px;
+	text-align: center;
 }
