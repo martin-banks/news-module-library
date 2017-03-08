@@ -10,5 +10,9 @@ export const viewController = {
 		color: {
 			template: <AtomsColor />
 		}
-	}
+	},
+	molecules: {},
+	organisms: {},
+	templates: {},
+	pages: {}
 }
