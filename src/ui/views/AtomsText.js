@@ -8,66 +8,41 @@ import Crosshead from '../../modules/atoms/text/Crosshead'
 import BodySerif from '../../modules/atoms/text/BodySerif'
 import BodySans from '../../modules/atoms/text/BodySans'
 import Smallhead from '../../modules/atoms/text/Smallhead'
+import PreviewContainer from '../viewModules/PreviewContainer'
 
 
+const components = {
+	kicker: <Kicker text={sampleText.kicker}/>,
+	title: <Title text={sampleText.title}/>,
+	intro: <Intro text={sampleText.intro}/>,
+	crosshead: <Crosshead text={sampleText.crosshead}/>,
+	smallhead: <Smallhead text={sampleText.crosshead}/>,
+	bodySerif: <BodySerif text={sampleText.paragrah}/>,
+	bodySans: <BodySans text={sampleText.paragraph}/>
+}
 
 export default class AtomsText extends React.Component{
-	/*constructor(props){
+	constructor(props){
 		super(props)	
-	}*/
+		this.createPreviews = this.createPreviews.bind(this)
+	}
+
+
+
+	createPreviews(){
+		return Object.keys(components)
+			.map( component => <PreviewContainer
+				key={'preview-' + component}
+				type={component}
+				component={components[component]}
+			text="some text"/>
+		)
+	}
 
 	render(){
 		return (
 			<section id="atomTextView">
-				<div className="elementContainer">
-					<h4 className="elementName">Kicker</h4>
-					<div className="previewWrapper">
-						<Kicker text={sampleText.kicker}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Title</h4>
-					<div className="previewWrapper">
-						<Title text={sampleText.title}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Introduction</h4>
-					<div className="previewWrapper">
-						<Intro text={sampleText.intro}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Crosshead</h4>
-					<div className="previewWrapper">
-						<Crosshead text={sampleText.crosshead}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Smallhead</h4>
-					<div className="previewWrapper">
-						<Smallhead text={sampleText.crosshead}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Body - serif</h4>
-					<div className="previewWrapper">
-						<BodySerif text={sampleText.paragraph}/>
-					</div>
-				</div>
-
-				<div className="elementContainer">
-					<h4 className="elementName">Body - sans-serif</h4>
-					<div className="previewWrapper">
-						<BodySans text={sampleText.paragraph}/>
-					</div>
-				</div>
-
+				{this.createPreviews()}
 			</section>
 		)
 	}
