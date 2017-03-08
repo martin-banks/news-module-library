@@ -7,7 +7,16 @@ export const navOptions = {
 		'Font',
 		'Button'
 	],
-	molecules: [],
-	components: [],
-	templates: []
+	molecules: [
+		'First molecule', 
+		'Second molecule'
+	],
+	components: [
+		'First component', 
+		'Second component'
+	],
+	templates: [
+		'First template', 
+		'Second template'
+	]
 }
