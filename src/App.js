@@ -5,7 +5,7 @@ import Navigation from './ui/navigation/Navigation'
 import {viewController} from './ui/_viewController'
 import AtomsText from './ui/views/AtomsText'
 import {navOptions} from './ui/navigation/_navOptions'
-
+import MissingView from './ui/viewModules/MissingView'
 
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
 			if(!!viewController[group][view]){
 				return viewController[group][view].template
 			} else {
-				return 'View template missing'
+				return <MissingView />
 			}
 		} else {
 			return 'No view set'
