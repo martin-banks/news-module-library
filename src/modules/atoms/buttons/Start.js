@@ -6,7 +6,7 @@ export default class ButtonStart extends React.Component {
 		console.log('styles', style)
 		return (
 			<button
-				className='startButton'
+				className={style.startButton}
 			>
 				{this.props.text}
 			</button>

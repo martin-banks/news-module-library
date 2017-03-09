@@ -16,7 +16,6 @@ export const viewController = {
 		}
 	},
 	molecules: {},
-	organisms: {},
-	templates: {},
-	pages: {}
+	components: {},
+	templates: {}
 }

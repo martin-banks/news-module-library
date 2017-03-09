@@ -2,12 +2,11 @@ import React from 'react'
 import NavItem from './_NavItem'
 import atomLogo from '../icons/icons_atom.svg'
 import moleculeLogo from '../icons/icons_molecule.svg'
-import {navOptions} from './_navOptions'
 import navStyle from '../../App.css'
-
+import {viewController} from '../_viewController'
 
 const initialNavIcon = ()=> {
-	return Object.keys(navOptions).reduce( (set, option) => {
+	return Object.keys(viewController).reduce( (set, option) => {
 		set[option] = 'expand_more'
 		return set
 	}, {})
@@ -60,13 +59,14 @@ export default class Navigation extends React.Component {
 
 	createGroupItems(group, activeGroup){ 
 		if(activeGroup === group){
-			return navOptions[group].map( (nav,i) => {
+			console.log('group', group)
+			return Object.keys(viewController[group]).map( (component,i) => {
 				return <NavItem 
-					key={group + nav + i}
+					key={group + component + i}
 					group={group} 
-					view={nav} 
+					view={component} 
 					handleClick={this.props.changeView}
-					isActive={this.checkActiveNav(nav)}
+					isActive={this.checkActiveNav(component)}
 				/>
 			})
 		} else {
@@ -76,7 +76,7 @@ export default class Navigation extends React.Component {
 	}
 
 	createItems(){
-		return Object.keys(navOptions).map(group => {
+		return Object.keys(viewController).map(group => {
 			return (
 				<div key={ group }>
 					<li 

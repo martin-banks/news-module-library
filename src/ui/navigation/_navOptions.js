@@ -1,3 +1,6 @@
+/* 
+DEPRICATED - pending deletion
+*/
 export const navOptions = {
 	atoms: [
 		'Text',

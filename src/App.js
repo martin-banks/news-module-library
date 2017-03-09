@@ -44,7 +44,7 @@ class App extends Component {
 				return <MissingView viewName={view} />
 			}
 		} else {
-			return 'No view set - preparing eject'
+			return <MissingView viewName='home page' />
 		}		
 	}
 
