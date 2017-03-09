@@ -4,18 +4,19 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martin-banks/react-module-sandbox.git"
+    "url": "git+https://github.com/martin-banks/news-module-library.git"
   },
   "author": "Martin Banks",
   "bugs": {
-      "url": "https://github.com/martin-banks/react-module-sandbox/issues"
-    },
-  "homepage": "https://github.com/martin-banks/react-module-sandbox#readme",
+    "url": "https://github.com/martin-banks/news-module-library/issues"
+  },
+  "homepage": "https://github.com/martin-banks/news-module-library#readme",
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "react-css-modules": "^4.1.0",
     "react-scripts": "0.9.3"
   },
   "scripts": {

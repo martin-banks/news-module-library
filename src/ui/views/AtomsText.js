@@ -17,7 +17,7 @@ const components = {
 	intro: <Intro text={sampleText.intro}/>,
 	crosshead: <Crosshead text={sampleText.crosshead}/>,
 	smallhead: <Smallhead text={sampleText.crosshead}/>,
-	bodySerif: <BodySerif text={sampleText.paragrah}/>,
+	bodySerif: <BodySerif text={sampleText.paragraph}/>,
 	bodySans: <BodySans text={sampleText.paragraph}/>
 }
 

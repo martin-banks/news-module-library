@@ -40,7 +40,7 @@ class App extends Component {
 			if(!!viewController[group][view]){
 				return viewController[group][view].template
 			} else {
-				return <MissingView />
+				return <MissingView viewName={view} />
 			}
 		} else {
 			return 'No view set'
