@@ -1,4 +1,58 @@
+
+
 .startButton {
 	color: purple;
 	background: yellow;
+	cursor: pointer;
 }
+
+.buttonRound,
+.buttonText {
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buttonRound {
+	width:  40px;
+	height: 40px;
+	border-radius: 100%;
+	border: solid 1px #ccc;
+	text-align: center;
+	color: #666;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+
+.buttonText {
+	/* width:  40px; */
+	position: relative;
+	display: table;
+	padding: 0;
+	min-height: 40px;
+	border-radius: 8px;
+	border: solid 1px #ccc;
+	text-align: center;
+	color: #666;
+	background-color: #fff;
+	font-size: 16px;
+	overflow: hidden;
+	text-align: left;
+	min-width: 100px;
+	width: auto;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.buttonText span {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 16px;
+}
+
+.buttonText:hover,
+.buttonRound:hover {
+	transition: transform 0.2s, box-shadow 0.2s;
+	box-shadow: 0px 8px 16px -8px rgba(0,0,0,0.6);
+	transform: translate3d(0, -4px, 0);
+}
+

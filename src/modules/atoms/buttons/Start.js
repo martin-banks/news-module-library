@@ -8,7 +8,7 @@ export default class ButtonStart extends React.Component {
 			<button
 				className={style.startButton}
 			>
-				{this.props.text}
+				{this.props.text || 'Start'}
 			</button>
 		)
 	}
