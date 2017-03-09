@@ -3,6 +3,7 @@ import NavItem from './_NavItem'
 import atomLogo from '../icons/icons_atom.svg'
 import moleculeLogo from '../icons/icons_molecule.svg'
 import {navOptions} from './_navOptions'
+import navStyle from '../../App.css'
 
 
 const initialNavIcon = ()=> {
@@ -79,11 +80,11 @@ export default class Navigation extends React.Component {
 			return (
 				<div key={ group }>
 					<li 
-						className="navGroupHeader"
+						className={navStyle.navGroupHeader}
 						onClick={this.setActiveNav}
 						data-group={group} 
 					>
-						{group}<i className="material-icons">{this.state.navIcons[group]}</i>
+						{group}<i className={navStyle.materialIcons}>{this.state.navIcons[group]}</i>
 					</li>
 					<ul>
 						{ this.createGroupItems(group, this.state.activeNav.section) }
@@ -95,9 +96,9 @@ export default class Navigation extends React.Component {
 
 	render(){
 		return (
-			<section id="navigationContainer">
-				<div className="navGroupsContainer">
-					<ul className="nav-primaryGroup atoms" >
+			<section className={navStyle.navigationContainer}>
+				<div className={navStyle.navGroupsContainer}>
+					<ul className={navStyle.navPrimaryGroup} >
 						{this.createItems()}
 					</ul>
 				</div>

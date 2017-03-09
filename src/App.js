@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import './App.css'
+import appStyle from './App.css'
 import Title from './modules/atoms/text/Title'
 import Navigation from './ui/navigation/Navigation'
 import {viewController} from './ui/_viewController'
 import AtomsText from './ui/views/AtomsText'
 import {navOptions} from './ui/navigation/_navOptions'
 import MissingView from './ui/viewModules/MissingView'
+import style from './App.css'
 
 
 class App extends Component {
@@ -51,11 +52,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={appStyle.App}>
         <Navigation
         	changeView={this.changeView}
         />
-        <div id="viewContainer">
+        <div className={style.viewContainer}>
 	        {this.setView()}
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import ColorSwatch from '../viewModules/ColorSwatches'
 import {colors} from '../../modules/atoms/colors/_values.js'
+import style from '../../App.css'
+
 
 
 export default class AtomsColor extends React.Component {
@@ -23,12 +25,12 @@ export default class AtomsColor extends React.Component {
 			return (
 				<div 
 					key={'swatchGroup' + colorName} 
-					className="elementContainer"
+					className={style.elementContainer}
 				>
-					<h4 className="elementName">
+					<h4 className={style.elementName}>
 						{colorName}
 					</h4>
-					<ul className='previewWrapper'>{swatches}</ul>
+					<ul className={style.previewWrapper}>{swatches}</ul>
 				</div>
 			)
 
@@ -37,7 +39,7 @@ export default class AtomsColor extends React.Component {
 
 	render(){
 		return (
-			<div id='atomColorView'>
+			<div className={style.atomColorView}>
 				{this.createSwatches()}
 			</div>
 		)

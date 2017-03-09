@@ -2,9 +2,8 @@ import React from 'react'
 import {sampleText} from '../../sampleContent/text'
 
 import ButtonStart from '../../modules/atoms/buttons/Start'
-
 import PreviewContainer from '../viewModules/PreviewContainer'
-
+import style from '../../App.css'
 
 const components = {
 	ButtonStart: <ButtonStart text='My test button'/>,
@@ -30,7 +29,7 @@ export default class AtomsButton extends React.Component{
 
 	render(){
 		return (
-			<section id="atomButtonView">
+			<section className={style.atomButtonView}>
 				{this.createPreviews()}
 			</section>
 		)

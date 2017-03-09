@@ -9,6 +9,7 @@ import BodySerif from '../../modules/atoms/text/BodySerif'
 import BodySans from '../../modules/atoms/text/BodySans'
 import Smallhead from '../../modules/atoms/text/Smallhead'
 import PreviewContainer from '../viewModules/PreviewContainer'
+import style from '../../App.css'
 
 
 const components = {
@@ -41,7 +42,7 @@ export default class AtomsText extends React.Component{
 
 	render(){
 		return (
-			<section id="atomTextView">
+			<section className={style.atomTextView}>
 				{this.createPreviews()}
 			</section>
 		)
