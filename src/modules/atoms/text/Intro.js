@@ -1,12 +1,11 @@
 import React from 'react'
-import {concatClassNames} from '../../../functions/concatClassNames'
-
+import styles from './text.css'
 
 export default class Intro extends React.Component{
 	
 	render(){
 		return (
-			<h4 className={concatClassNames(['intro'])}>
+			<h4 className={styles.intro}>
 				{this.props.text}
 			</h4>
 		)

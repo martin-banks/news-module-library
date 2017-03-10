@@ -1,12 +1,11 @@
 import React from 'react'
-import {concatClassNames} from '../../../functions/concatClassNames'
-
+import styles from './text.css'
 
 export default class BodySerif extends React.Component{
 	
 	render(){
 		return (
-			<p className={concatClassNames(['bodySerif'])}>
+			<p className={styles.bodyTextSerif}>
 				{this.props.text}
 			</p>
 		)

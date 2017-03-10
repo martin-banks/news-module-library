@@ -1,12 +1,11 @@
 import React from 'react'
-import {concatClassNames} from '../../../functions/concatClassNames'
-
+import styles from './text.css'
 
 export default class Smallhead extends React.Component{
 	
 	render(){
 		return (
-			<h3 className={concatClassNames(['smallHead'])}>
+			<h3 className={styles.smallHead}>
 				{this.props.text}
 			</h3>
 		)

@@ -1,13 +1,11 @@
 import React from 'react'
-import {concatClassNames} from '../../../functions/concatClassNames'
-import styles from '../../../styles/text.css'
-
+import styles from './text.css'
 
 export default class Title extends React.Component{
 	
 	render(){
 		return (
-			<h1 className={concatClassNames(['title'])} >
+			<h1 className={styles.title} >
 				{this.props.text}
 			</h1>
 		)

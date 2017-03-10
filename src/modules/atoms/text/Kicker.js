@@ -1,12 +1,11 @@
 import React from 'react'
-import {concatClassNames} from '../../../functions/concatClassNames'
-
+import styles from './text.css'
 
 export default class Kicker extends React.Component{
 	
 	render(){
 		return (
-			<h6 className={concatClassNames(['kicker'])}>
+			<h6 className={styles.kicker}>
 				{this.props.text}
 			</h6>
 		)
