@@ -2,6 +2,7 @@ import React from 'react'
 import AtomsText from './views/AtomsText'
 import AtomsColor from './views/AtomsColor'
 import AtomsButton from './views/AtomsButton'
+import AtomsContainer from './views/AtomsContainer'
 
 export const viewController = {
 	atoms: {
@@ -13,6 +14,9 @@ export const viewController = {
 		},
 		button: {
 			template: <AtomsButton />
+		},
+		container: {
+			template: <AtomsContainer />
 		}
 	},
 	molecules: {
