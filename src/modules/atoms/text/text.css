@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i');
 
-.cc-title{
+.title{
 	font-family: 'Guardian Sans Cond', 'Helvetica', sans-serif;
 	letter-spacing: 0.2px;
 	font-weight: 800;
 	text-rendering: geometricPrecision;
 }
 
-.cc-intro {
+.intro {
 	font-family: 'Guardian Sans', 'Helvetica', sans-serif;
 	font-weight: 300;
 	font-size: 20px;
@@ -16,7 +16,7 @@
 	text-rendering: geometricPrecision;
 }
 
-.cc-bodySerif {
+.bodyTextSerif {
 	font-family: 'Merriweather', serif;
 	font-size: 16px;
 	line-height: 24px;
@@ -24,14 +24,25 @@
 	text-rendering: geometricPrecision;
 }
 
-.cc-bodySansSerif {
+.bodyTextSansSerif {
 	font-family: 'Guardian Sans', Helvetica, sans-serif;
 	font-size: 18px;
+	letter-spacing: 0.5px;
 	line-height: 24px;
 	font-weight: 300;
 	text-rendering: geometricPrecision;
 }
 
-.randowUnusedStyle{ 
-	color:  purple;
+
+.listNumber,
+.listBullet {
+	composes:  bodyTextSansSerif;
+	padding: 0 40px;
+	margin:  24px 0;
+	border-left: solid 4px #ccc;
+}
+
+.listNumber li,
+.listBullet li {
+	margin-bottom: 4px;
 }
