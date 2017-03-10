@@ -18,6 +18,7 @@ export default class Navigation extends React.Component {
 		super(props)
 		this.createItems = this.createItems.bind(this)
 		this.checkActiveNav = this.checkActiveNav.bind(this)
+		this.checkActiveSection = this.checkActiveSection.bind(this)
 		this.setActiveNav = this.setActiveNav.bind(this)
 		this.createGroupItems = this.createGroupItems.bind(this)
 
@@ -46,8 +47,16 @@ export default class Navigation extends React.Component {
 		let updatedIcons = initialNavIcon()
 		updatedIcons[group] = 'expand_less'
 
-		this.setState({activeNav: activeNav})
+		this.setState({ activeNav: activeNav })
 		this.setState({ navIcons: updatedIcons })
+
+		if (!!page){
+			/* 
+			if there is a page/view defined, call changeView function from main App
+			This will trigger change of App state to render correct view
+			*/
+			this.props.changeView(e)
+		}
 	}
 
 
@@ -56,16 +65,21 @@ export default class Navigation extends React.Component {
 			return this.state.activeNav.page.toLowerCase() === viewToCheck.toLowerCase()
 		}
 	}
+	checkActiveSection(sectionToCheck){
+		if(!!this.state.activeNav.section){
+			return this.state.activeNav.section.toLowerCase() === sectionToCheck.toLowerCase()
+		}
+	}
+
 
 	createGroupItems(group, activeGroup){ 
 		if(activeGroup === group){
-			console.log('group', group)
 			return Object.keys(viewController[group]).map( (component,i) => {
 				return <NavItem 
 					key={group + component + i}
 					group={group} 
 					view={component} 
-					handleClick={this.props.changeView}
+					handleClick={this.setActiveNav}
 					isActive={this.checkActiveNav(component)}
 				/>
 			})
@@ -82,7 +96,8 @@ export default class Navigation extends React.Component {
 					<li 
 						className={navStyle.navGroupHeader}
 						onClick={this.setActiveNav}
-						data-group={group} 
+						data-group={group}
+						data-active={this.checkActiveSection(group)}
 					>
 						{group}<i className={navStyle.materialIcons}>{this.state.navIcons[group]}</i>
 					</li>
