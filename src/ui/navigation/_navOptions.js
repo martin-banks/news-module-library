@@ -1,7 +1,7 @@
 /* 
 DEPRICATED - pending deletion
 */
-export const navOptions = {
+/*export const navOptions = {
 	atoms: [
 		'Text',
 		'Icon',
@@ -22,4 +22,4 @@ export const navOptions = {
 		'First template', 
 		'Second template'
 	]
-}
+}*/
