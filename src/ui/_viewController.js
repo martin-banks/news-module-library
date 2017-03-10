@@ -15,7 +15,13 @@ export const viewController = {
 			template: <AtomsButton />
 		}
 	},
-	molecules: {},
-	components: {},
-	templates: {}
+	molecules: {
+		"first view": {}
+	},
+	components: {
+		"first view": {}
+	},
+	templates: {
+		"first view": {}
+}
 }
