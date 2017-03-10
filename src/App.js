@@ -38,7 +38,7 @@ class App extends Component {
 		let view = this.state.activeView.view
 		let group = this.state.activeView.group
 		if (!!view && !!group){
-			if(!!viewController[group][view]){
+			if(!!viewController[group][view].template){
 				return viewController[group][view].template
 			} else {
 				return <MissingView viewName={view} />
