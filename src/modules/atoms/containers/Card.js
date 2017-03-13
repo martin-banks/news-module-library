@@ -13,12 +13,12 @@ export default class ContainerCard extends React.Component {
 
 	render(){
 		return <div className={styles.card}>
-			{this.processContent()}
+			{this.props.children}
 		</div>
 	}
 
 }
 
 ContainerCard.propTypes = {
-	content: React.PropTypes.array.isRequired
+	content: React.PropTypes.array
 }
