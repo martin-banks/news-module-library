@@ -48,28 +48,12 @@ export default class BodyContent extends React.Component {
 }
 
 
-
 BodyContent.propTypes = {
 	content: React.PropTypes.array.isRequired
 }
-/*
-<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<Smallhead text={sampleText.crosshead}/>
-				<ListText type='number' items={sampleText.list} style='bodyTextSerif' />
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<Crosshead text={sampleText.crosshead}/>	
-				<Smallhead text={sampleText.crosshead}/>
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<Crosshead text={sampleText.crosshead}/>	
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<Smallhead text={sampleText.crosshead}/>
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
-				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />*/
 
-/*
 
+/* EXAMPLE OF CONTENT ARRAY
 content: [
 	{
 		type: 'BodyText',
@@ -85,7 +69,7 @@ content: [
 	},
 	{
 		type: 'ListText',
-		style: 'number'
+		style: 'number',
 		content: [
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
@@ -94,7 +78,6 @@ content: [
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 		]
 	}
-
 ]
 		
 */
