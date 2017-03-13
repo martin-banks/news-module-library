@@ -4,6 +4,11 @@ import AtomsColor from './views/AtomsColor'
 import AtomsButton from './views/AtomsButton'
 import AtomsContainer from './views/AtomsContainer'
 
+import MoleculeHeaderText from './views/MoleculeHeader'
+import MoleculeBodyText from './views/MoleculeBody'
+
+import Component_CardSimple from './views/Component_CardSimple'
+
 export const viewController = {
 	atoms: {
 		text: {
@@ -20,10 +25,17 @@ export const viewController = {
 		}
 	},
 	molecules: {
-		"first view": {}
+		"header text": {
+			template: <MoleculeHeaderText />
+		},
+		"body text": {
+			template: <MoleculeBodyText />
+		}
 	},
 	components: {
-		"first view": {}
+		"simple card": {
+			template: <Component_CardSimple />
+		}
 	},
 	templates: {
 		"first view": {}
