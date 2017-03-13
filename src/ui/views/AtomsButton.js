@@ -1,20 +1,19 @@
 import React from 'react'
 import {sampleText} from '../../sampleContent/text'
 
-import ButtonStart from '../../modules/atoms/buttons/Start'
 import ButtonRoundIcon from '../../modules/atoms/buttons/RoundIcon'
 import ButtonSquareText from '../../modules/atoms/buttons/SquareText'
 import ButtonPill from '../../modules/atoms/buttons/Pill'
-
+import ButtonShowMore from '../../modules/atoms/buttons/ShowMore'
 
 import PreviewContainer from '../viewModules/PreviewContainer'
 import style from '../../App.css'
 
 const components = {
-	"Standard start": <ButtonStart text='My test button'/>,
 	"Round with icon": <ButtonRoundIcon />,
 	"Text with icon": <ButtonSquareText />,
-	"Pill text and icon": <ButtonPill />
+	"Pill text and icon": <ButtonPill />,
+	"Show more / less toggle": <ButtonShowMore />
 }
 
 export default class AtomsButton extends React.Component{
