@@ -108,3 +108,22 @@
 	top: 0;
 	margin: 0;
 }
+
+
+.showMore {
+	composes:  button;
+	transition: background-color 0.2s;
+	background: none;
+	border: none;
+	text-align: right;
+	width: 100%;
+	padding-right: 40px;
+	border-top: solid 1px #e2e2e2;
+	padding: 16px 40px 16px 0;
+}
+.showMore:hover {
+	transition: background-color 0.2s;
+	transform: none;
+	box-shadow: none;
+	background-color: rgba(0, 0, 0, 0.1);
+}
