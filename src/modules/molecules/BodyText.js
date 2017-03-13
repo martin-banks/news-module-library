@@ -27,6 +27,14 @@ export default class BodyContent extends React.Component {
 				<ListText type='number' items={sampleText.list} style='bodyTextSerif' />
 				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
 				<Crosshead text={sampleText.crosshead}/>	
+				<Smallhead text={sampleText.crosshead}/>
+				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
+				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
+				<Crosshead text={sampleText.crosshead}/>	
+				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
+				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
+				<Smallhead text={sampleText.crosshead}/>
+				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
 				<BodyText text={sampleText.paragraph} style='bodyTextSerif' />
 			</div>
 		)
