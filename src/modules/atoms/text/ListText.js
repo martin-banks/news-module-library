@@ -19,7 +19,7 @@ export default class ListText extends React.Component{
 	}
 
 	listType(items){
-		if(this.props.type === 'number'){
+		if(!!this.props.type && this.props.type === 'number'){
 			return <ol className={styles.listNumber}>
 				{items}
 			</ol>
@@ -45,5 +45,5 @@ export default class ListText extends React.Component{
 
 ListText.propTypes = {
 	items: React.PropTypes.array.isRequired,
-	type: React.PropTypes.string.isRequired
+	type: React.PropTypes.string
 }

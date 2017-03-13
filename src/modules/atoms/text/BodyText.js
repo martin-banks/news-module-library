@@ -13,7 +13,7 @@ export default class BodyText extends React.Component{
 	}
 
 	concatStyles(){
-		let styleToCheck = styles[this.props.style]
+		let styleToCheck = styles[this.props.style || 'bodyTextSerif']
 		if(!!styleToCheck){
 			return styleToCheck
 		} else {

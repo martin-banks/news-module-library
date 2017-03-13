@@ -10,6 +10,8 @@ import PreviewContainer from '../viewModules/PreviewContainer'
 import CardSimple from '../../modules/components/CardSimple'
 
 
+
+
 export default class Component_CardSimple extends React.Component{
 	constructor(props){
 		super(props)	

@@ -9,13 +9,40 @@ import BodyContent from '../molecules/BodyText'
 import HeaderText from '../molecules/HeaderText'
 
 
-const openContent = [
+const openContent = p => [
 	<HeaderText />,
-	<BodyContent />
+	<BodyContent content={p.body} />
 ]
 
-const closedContent = [
+const closedContent = p =>  [
 	<HeaderText />
+]
+
+const bodyContent = [
+	{
+		type: 'BodyText',
+		content: 'Lorem ipsum etc ...'
+	},
+	{
+		type: 'Crosshead',
+		content: 'Lorem ipsum etc ...'
+	},
+	{
+		type: 'BodyText',
+		content: 'Lorem ipsum etc ...'
+	},
+	{
+		type: 'ListText',
+		style: 'number',
+		content: [
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+		]
+	}
+
 ]
 
 
@@ -26,9 +53,10 @@ export default class CardSimple extends React.Component {
 
 		this.state = {
 			isOpen: false,
-			content: [
-				<HeaderText />
-			]
+			content: closedContent(),
+			cardContent: {
+				body: bodyContent
+			}
 		}
 	}
 
@@ -38,10 +66,10 @@ export default class CardSimple extends React.Component {
 			update.isOpen = false
 			update.content = closedContent*/
 			this.setState({ isOpen: false })
-			this.setState({ content: closedContent })
+			this.setState({ content: closedContent(this.state.cardContent) })
 		} else {
 			this.setState({ isOpen: true })
-			this.setState({ content: openContent })
+			this.setState({ content: openContent(this.state.cardContent) })
 		}
 		
 	}
