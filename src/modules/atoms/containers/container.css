@@ -10,6 +10,7 @@
 	composes:  baseTypography;
 	position: relative;
 	padding: 16px;
+	padding:  calc( 16px + (16 - 10) * ( (100vw - 300px) / ( 1200 - 300) ));
 	margin: 16px auto 24px auto;
 	border: solid 1px #ccc;
 	border-radius: 4px;

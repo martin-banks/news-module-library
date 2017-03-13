@@ -1,36 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i');
 
-.title{
+.common {
+	text-rendering: geometricPrecision;
+	margin: 0;
+}
+
+
+.title {
+	composes: common;
 	font-family: 'Guardian Sans Cond', 'Helvetica', sans-serif;
 	letter-spacing: 0.2px;
 	font-weight: 800;
-	text-rendering: geometricPrecision;
+	margin-bottom: 16px;
 }
 
 .intro {
+	composes: common;
 	font-family: 'Guardian Sans', 'Helvetica', sans-serif;
 	font-weight: 300;
 	font-size: 20px;
 	line-height: 28px;
 	letter-spacing: 0.5px;
-	text-rendering: geometricPrecision;
+	margin-bottom:  24px;
 }
 
 .bodyTextSerif {
+	composes: common;
 	font-family: 'Merriweather', serif;
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 100;
-	text-rendering: geometricPrecision;
+	margin-bottom: 16px;
 }
 
 .bodyTextSansSerif {
+	composes: common;
 	font-family: 'Guardian Sans', Helvetica, sans-serif;
 	font-size: 18px;
 	letter-spacing: 0.5px;
 	line-height: 24px;
 	font-weight: 300;
-	text-rendering: geometricPrecision;
 }
 
 
@@ -38,11 +47,72 @@
 .listBullet {
 	composes:  bodyTextSansSerif;
 	padding: 0 40px;
-	margin:  24px 0;
+	margin: 32px 0;
 	border-left: solid 4px #ccc;
 }
 
 .listNumber li,
 .listBullet li {
 	margin-bottom: 4px;
+}
+
+
+.kicker {
+	composes: common;
+	text-transform: uppercase;
+	font-family: 'Guardian Sans', 'Helvetica', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 16px;
+	margin-bottom: 8px;
+	display: table;
+}
+
+
+.crosshead {
+	text-transform: uppercase;
+	font-family: 'Guardian Sans', 'Helvetica', sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 22px;
+	margin-bottom: 4px;
+	display: table;
+	margin-top: 40px;
+}
+
+.smallHead {
+	font-family: 'Guardian Sans', 'Helvetica', sans-serif;
+	font-weight: 900;
+	font-size: 18px;
+	line-height: 16px;
+	margin-bottom: 8px;
+	display: table;
+	margin-top: 32px;
+	margin-bottom: 4px;
+}
+
+
+.crosshead + .smallHead {
+	margin-top: 0px;
+	display: block;
+	/* border-bottom: solid 1px red; */
+	
+}
+
+.smallHead + .bodyTextSansSerif,
+.smallHead + .bodyTextSerif,
+.crosshead + .bodyTextSansSerif,
+.crosshead + .bodyTextSerif {
+	border-top: solid 1px #ccc;
+	padding-top: 16px;
+	margin-top: 12px;
+}
+
+
+
+.crosshead + div > .listNumber,
+.crosshead + div > .listBullet,
+.smallHead + div > .listNumber,
+.smallHead + div > .listBullet {
+	margin-top: 16px;
 }
