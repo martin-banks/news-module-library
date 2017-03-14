@@ -9,14 +9,6 @@ import BodyContent from '../molecules/BodyText'
 import HeaderText from '../molecules/HeaderText'
 
 
-const openContent = p => [
-	<HeaderText />,
-	<BodyContent content={p.body} />
-]
-
-const closedContent = p =>  [
-	<HeaderText />
-]
 
 const bodyContent = [
 	{
@@ -42,7 +34,29 @@ const bodyContent = [
 			'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 		]
 	}
+]
+const headerContent = [
+	{
+		type: 'Kicker',
+		content: 'Lorem ipsum etc ...'
+	},
+	{
+		type: 'Title',
+		content: 'Lorem ipsum etc ...'
+	},
+	{
+		type: 'Intro',
+		content: 'Lorem ipsum etc ...'
+	}
+]
 
+
+const openContent = p => [
+	<HeaderText content={p.header} />,
+	<BodyContent content={p.body} />
+]
+const closedContent = p =>  [
+	<HeaderText content={p.header} />
 ]
 
 
@@ -53,36 +67,36 @@ export default class CardSimple extends React.Component {
 
 		this.state = {
 			isOpen: false,
-			content: closedContent(),
+			content: null,
 			cardContent: {
-				body: bodyContent
+				body: bodyContent,
+				header: headerContent
 			}
 		}
 	}
 
 	toggleOpen(update){
 		if(this.state.isOpen){
-			/*let update = this.state
-			update.isOpen = false
-			update.content = closedContent*/
+			/* the card is open - time to close it */
 			this.setState({ isOpen: false })
 			this.setState({ content: closedContent(this.state.cardContent) })
 		} else {
+			/* the card is closed - time to open it */
 			this.setState({ isOpen: true })
 			this.setState({ content: openContent(this.state.cardContent) })
 		}
-		
+	}
+
+	componentWillMount() {
+		this.setState({ content: closedContent(this.state.cardContent) })
 	}
 
 	render(){
 		return (
-			<div
-				className={styles.headerTextContainer}
-			>
+			<div className={styles.headerTextContainer} >
 				<Card>
 					{this.state.content}
-					
-					<ShowMore handleClick={this.toggleOpen} />
+					<ShowMore handleClick = {this.toggleOpen} />
 				</Card>
 				
 			</div>

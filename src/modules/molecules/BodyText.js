@@ -32,14 +32,11 @@ export default class BodyContent extends React.Component {
 		return this.props.content.map( block => {
 			return supportedBlocks[block.type](block)
 		} )
-
 	}
 
 	render(){
 		return (
-			<div
-				className={styles.headerTextContainer}
-			>
+			<div className={styles.headerTextContainer} >
 				{this.processContent()}
 			</div>
 		)
