@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './buttonStyles.css'
-import MaterialIcon from '../icon/MaterialIcon.js'
+import MaterialIcon from '../icons/MaterialIcon.js'
 
 
 let showMoreState = {
