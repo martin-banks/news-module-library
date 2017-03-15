@@ -1,3 +1,41 @@
 .headerTextContainer {
 
 }
+
+.bodyContentContainer {
+	overflow: hidden;
+}
+
+
+.enter {
+	transition: all 0.6s;
+	max-height: 10000px;
+	/* opacity: 1; */
+}
+.enter.enterActive {
+	transition: all 0.6s;
+	opacity: 0;
+ /*  max-height: 0px; */
+  
+}
+
+
+.appear {
+  max-height: 0px;
+  opacity: 0;
+  transform:  translate3d(0,30%,0) scale(0.8);
+}
+.appear.appearActive {
+	transition: all 0.8s;
+  max-height: 1000px;
+  opacity: 1;
+  transform:  translate3d(0,0,0) scale(1);
+}
+
+.leave {
+	opacity: 1;
+}
+.leave.leaveActive {
+	transition: opacity 1000ms;
+	opacity: 0.01;
+}
