@@ -4,48 +4,73 @@ import React from 'react'
 export default class Image_translucentShadow extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {}
+		this.updateStyles = this.updateStyles.bind(this)
+		this.updateImagePath = this.updateImagePath.bind(this)
+
+		this.state = {
+			localStyles: {
+				container: {
+					position: 'relative',
+					height: '0',
+					width: '100%',
+					paddingBottom: '60%',
+					margin: '0 auto 16px auto'
+				},
+				image: {
+					position: 'absolute',
+					top: '0',
+					left: '0',
+					backgroundColor: '#e2e2e2',
+					//backgroundImage: `url()`,
+					width: '100%',
+					height: '100%',
+					borderRadius: '8px',
+					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					zIndex: '1'
+				},
+				shadow: {
+					transform: 'translateY(40px) scale(0.9)',
+					filter: 'blur(30px)',
+					zIndex: '0'
+				}
+			}
+		}
+			
 	}
 
 
-	render(){
-		let imgSize = {
-			width: this.props.imgWidth || '300px',
-			height: this.props.imgHeight || '300px'
-		}
+	updateStyles(){
+		console.log('processing styles', this.props.addStyles)
+		let stylesToUpdate = this.state.localStyles
+		Object.keys(this.props.addStyles).forEach( element => {
+			Object.keys(this.props.addStyles[element]).forEach( addStyle => {
+				stylesToUpdate[element][addStyle] = this.props.addStyles[element][addStyle]
+			})
+		})
+		this.setState({cardStyles: stylesToUpdate})
+	}
 
-		let containerStyles = {
-			position: 'relative',
-			width: imgSize.width,
-			height: imgSize.height,
-			margin: '0 auto 16px auto'
-		}
-		let imageStyles = {
-			position: 'absolute',
-			top: '0',
-			left: '0',
-			backgroundColor: '#e2e2e2',
-			backgroundImage: `url(${this.props.imagePath})`,
-			width: imgSize.width,
-			height: imgSize.height,
-			borderRadius: '8px',
-			backgroundPosition: 'center',
-			backgroundRepeat: 'no-repeat',
-			zIndex: '1'
-		}
-		let shadowStyles = {
-			transform: 'translateY(40px) scale(0.9)',
-			filter: 'blur(30px)',
-			zIndex: '0'
-		}
+	updateImagePath(){
+		let updateStyles = this.state.localStyles
+		updateStyles.image.backgroundImage = `url(${this.props.imagePath})`
+		Object.assign( updateStyles.shadow, updateStyles.image )
+		this.setState({localStyles: updateStyles})
+	}
 
-		Object.assign( shadowStyles, imageStyles )
-			
-			
+	componentWillMount() {
+		!!this.props.addStyles ? this.updateStyles() : ''
+		this.updateImagePath()
+		
+	}
+
+
+	render(){		
 		return (
-			<div style={containerStyles} >
-				<div style={ shadowStyles }></div>
-				<div style={ imageStyles }></div>
+			<div style={ this.state.localStyles.container } >
+				<div style={ this.state.localStyles.shadow }></div>
+				<div style={ this.state.localStyles.image }></div>
 			</div>
 		)
 	}
@@ -53,6 +78,7 @@ export default class Image_translucentShadow extends React.Component {
 
 Image_translucentShadow.propTypes = {
 	imagePath: React.PropTypes.string.isRequired,
-	imgWidth: React.PropTypes.string,
-	imgHeight: React.PropTypes.string
+	/*imgWidth: React.PropTypes.string,
+	imgHeight: React.PropTypes.string,*/
+	addStyles: React.PropTypes.object
 }
