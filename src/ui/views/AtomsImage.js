@@ -5,9 +5,11 @@ import style from '../../App.css'
 import Image_translucentShadow from '../../modules/atoms/images/Image_translucentShadow'
 import Image_Shadow from '../../modules/atoms/images/Image_Shadow'
 
+const imagePath = 'https://unsplash.it/300/300/?random'
+
 const components = {
-	"Translucent shadow": <Image_translucentShadow imagePath = 'https://unsplash.it/300/300/?random' />,
-	"Shadow": <Image_Shadow imagePath = 'https://unsplash.it/300/300/?random' />
+	"Translucent shadow": <Image_translucentShadow imagePath = {imagePath} />,
+	"Shadow": <Image_Shadow imagePath = {imagePath} />
 }
 
 
