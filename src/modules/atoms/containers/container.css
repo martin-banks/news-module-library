@@ -19,3 +19,20 @@
 	display: block;
 	box-sizing: border-box;
 }
+
+
+.timeline {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	height: 100%;
+	width:  40%;
+}
+
+.verticalStripe {
+	position: relative;
+	width: 1px;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #333;
+}
