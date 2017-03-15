@@ -5,17 +5,25 @@ import Image_Shadow from '../atoms/images/Image_Shadow'
 import BodyText from '../atoms/text/BodyText'
 import ContainerCard from '../atoms/containers/Card'
 
+
+
 const supportedBlocks = {
 	Kicker: p => <Kicker text={p.content} />,
-	Image_Shadow: p => <Image_Shadow imagePath={p.imagePath} addStyles={
-		{display: 'inline-block', margin: '16px 8px'}
-	} />,
+	Image_Shadow: p => <Image_Shadow imagePath={p.imagePath} addStyles={{
+		container: {
+			display: 'inline-block', 
+			margin: '16px 8px',
+			width: '100px',
+			height: '100px',
+			padding: '0'
+		},
+		image: {
+			borderRadius: '100%'
+		}
+	}} />,
 	Smallhead: p => <Smallhead text={p.content} />,
 	BodyText: p => <BodyText style='bodyTextSerif' text={p.content} />
 }
-
-
-
 
 export default class Timeline_Card extends React.Component {
 	constructor(props) {
@@ -47,12 +55,13 @@ export default class Timeline_Card extends React.Component {
 
 	componentWillMount() {
 		!!this.props.addStyles ? this.updateStyles() : ''
+		this.setState({ content: this.processContent() })
 	}
 
 	render(){
 		return (
 			<ContainerCard addStyle={this.state.cardStyles} >
-				{this.processContent()}
+				{this.state.content}
 			</ContainerCard>
 		)
 	}
@@ -64,5 +73,3 @@ Timeline_Card.propTypes = {
 	addStyles: React.PropTypes.object
 }
 
-
-// transform: !!this.props.addStyle ? this.props.addStyle.transform || 'none' : ''

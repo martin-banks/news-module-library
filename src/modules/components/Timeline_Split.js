@@ -1,11 +1,20 @@
 import React from 'react'
 
 import Timeline_Card from '../molecules/Timeline_card'
-
+import HeaderText from '../molecules/HeaderText'
+import Container_Timeline from '../atoms/containers/Container_Timeline'
 
 const timelineContent = {
-	title: 'Timeline title',
-	intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere cumque quasi, sed aspernatur?',
+	header: [
+		{
+			type: 'Title',
+			content: 'Timeline line title here'
+		},
+		{
+			type: 'Intro',
+			content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere cumque quasi, sed aspernatur?',
+		}
+	],
 
 	cards: [
 		{
@@ -95,18 +104,40 @@ export default class Timeline_Split extends React.Component {
 	}
 
 	createCards(){
-		return this.state.content.cards.map( card => {
-			return <Timeline_Card 
-				content={card.content} 
-				addStyles={{ transform: `translate3D(${card.position === 'left' ? '-50%,0,0':'50%,0,0'})` }} 
-			/>
-		})
+		return [
+			<div style={{
+				position:'absolute',
+				width: '100%',
+				height: '100%',
+				zIndex: "0",
+				textAlign: 'center'
+			}} >
+				<Container_Timeline />
+				<Container_Timeline />
+			</div>,
+			this.state.content.cards.map( card => {
+					return <Timeline_Card 
+						content={card.content} 
+						addStyles={{ transform: `translate3D(${card.position === 'left' ? '-33%,0,0':'33%,0,0'})` }} 
+					/>
+				})
+			]
 	}
 
 	render(){
 		return(
-			<div >
-				{this.createCards()}
+			<div style={{
+				position: 'relative'
+			}} >
+				<HeaderText content={this.state.content.header} />
+				
+				<section style={{
+					position: 'relative'
+				}}  >
+					{this.createCards()}
+				</section>
+				
+
 			</div>
 		)
 	}
