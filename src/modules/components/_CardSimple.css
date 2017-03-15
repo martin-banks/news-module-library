@@ -1,0 +1,43 @@
+.enter {
+	transition: all 1000ms;
+	max-height: 10000px;
+	/* opacity: 1; */
+	color:  red;
+}
+.enter.enterActive {
+	transition: all 1000ms;
+	//opacity: 0;
+	max-height: 0px;
+  color:  blue;
+}
+
+
+.appear {
+	transition: all 1000ms;
+  max-height: 0px;
+	opacity: 0;
+
+}
+
+.appear.appearActive {
+	transition: all 1000ms;
+  max-height: 1000px;
+  opacity: 1;
+  padding: 0;
+}
+
+.leave {
+	opacity: 1;
+}
+
+.leave.leaveActive {
+	transition: opacity 1000ms;
+	opacity: 0.01;
+}
+
+
+
+.bodyContentContainer {
+	overflow: hidden;
+}
+
