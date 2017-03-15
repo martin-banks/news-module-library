@@ -16,7 +16,6 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "react-css-modules": "^4.1.0",
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
@@ -50,6 +49,8 @@
     "object-assign": "4.1.1",
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-css-modules": "^4.1.0",
     "react-dev-utils": "^0.5.1",
     "recursive-readdir": "2.1.1",
     "strip-ansi": "3.0.1",
